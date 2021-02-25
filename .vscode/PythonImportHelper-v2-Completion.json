@@ -1,0 +1,248 @@
+[
+    {
+        "label": "pyttsx3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyttsx3",
+        "description": "pyttsx3",
+        "detail": "pyttsx3",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "speech_recognition",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "speech_recognition",
+        "description": "speech_recognition",
+        "detail": "speech_recognition",
+        "documentation": {}
+    },
+    {
+        "label": "wikipedia",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "wikipedia",
+        "description": "wikipedia",
+        "detail": "wikipedia",
+        "documentation": {}
+    },
+    {
+        "label": "webbrowser",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "webbrowser",
+        "description": "webbrowser",
+        "detail": "webbrowser",
+        "documentation": {}
+    },
+    {
+        "label": "urllib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib",
+        "description": "urllib",
+        "detail": "urllib",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "smtplib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "smtplib",
+        "description": "smtplib",
+        "detail": "smtplib",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEMultipart",
+        "importPath": "email.mime.multipart",
+        "description": "email.mime.multipart",
+        "isExtraImport": true,
+        "detail": "email.mime.multipart",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEText",
+        "importPath": "email.mime.text",
+        "description": "email.mime.text",
+        "isExtraImport": true,
+        "detail": "email.mime.text",
+        "documentation": {}
+    },
+    {
+        "label": "jokesDict",
+        "importPath": "jokes",
+        "description": "jokes",
+        "isExtraImport": true,
+        "detail": "jokes",
+        "documentation": {}
+    },
+    {
+        "label": "randomMusicList",
+        "importPath": "randomMusicList",
+        "description": "randomMusicList",
+        "isExtraImport": true,
+        "detail": "randomMusicList",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "emailDict",
+        "description": "emailDict",
+        "isExtraImport": true,
+        "detail": "emailDict",
+        "documentation": {}
+    },
+    {
+        "label": "smsDict",
+        "importPath": "smsDict",
+        "description": "smsDict",
+        "isExtraImport": true,
+        "detail": "smsDict",
+        "documentation": {}
+    },
+    {
+        "label": "getName",
+        "kind": 2,
+        "importPath": "emailDict",
+        "description": "emailDict",
+        "peekOfCode": "def getName(emailId) : \n    dict_val = list(emailDict.values())\n    dict_keys = list(emailDict.keys())\n    name = dict_keys[dict_val.index(emailId)]\n    name = name.capitalize()\n    return name\n# name = getName(\"anukritikajal@gmail.com\")\n# print(name)",
+        "detail": "emailDict",
+        "documentation": {}
+    },
+    {
+        "label": "emailDict",
+        "kind": 5,
+        "importPath": "emailDict",
+        "description": "emailDict",
+        "peekOfCode": "emailDict = {\n    \"name\" : \"emailId@gmail.com\"\n}\n''' Returns the name from email-id'''\ndef getName(emailId) : \n    dict_val = list(emailDict.values())\n    dict_keys = list(emailDict.keys())\n    name = dict_keys[dict_val.index(emailId)]\n    name = name.capitalize()\n    return name",
+        "detail": "emailDict",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "kind": 2,
+        "importPath": "jarvis",
+        "description": "jarvis",
+        "peekOfCode": "def speak(audio):\n    engine.say(audio) \n    engine.runAndWait() #Without this command, speech will not be audible to us.\n''' Wishes on startup according to hour '''\ndef wishMe():\n    hour = datetime.datetime.now().hour\n    if hour >= 5 and hour < 12 :\n        speak(\"Good Morning \")\n    elif hour >= 12 and hour <= 18:\n        speak(\"Good Afternoon \")",
+        "detail": "jarvis",
+        "documentation": {}
+    },
+    {
+        "label": "wishMe",
+        "kind": 2,
+        "importPath": "jarvis",
+        "description": "jarvis",
+        "peekOfCode": "def wishMe():\n    hour = datetime.datetime.now().hour\n    if hour >= 5 and hour < 12 :\n        speak(\"Good Morning \")\n    elif hour >= 12 and hour <= 18:\n        speak(\"Good Afternoon \")\n    else :\n        speak(\"Good evening\")\n    speak(\"I am Jarvis Sir. What can I do for you ?\")\n''' Take Command '''",
+        "detail": "jarvis",
+        "documentation": {}
+    },
+    {
+        "label": "takeCommand",
+        "kind": 2,
+        "importPath": "jarvis",
+        "description": "jarvis",
+        "peekOfCode": "def takeCommand():\n    #It takes microphone input from the user and returns string output\n    r = sr.Recognizer()\n    with sr.Microphone() as source:\n        print(\"Listening...\")\n        r.pause_threshold = 1\n        r.energy_threshold = 300\n        r.adjust_for_ambient_noise(source) #reduce noise\n        audio = r.listen(source)\n    try:",
+        "detail": "jarvis",
+        "documentation": {}
+    },
+    {
+        "label": "sendEmail",
+        "kind": 2,
+        "importPath": "jarvis",
+        "description": "jarvis",
+        "peekOfCode": "def sendEmail(subject,to, content):\n    #The mail addresses and password\n    sender_address = 'yourEmail@gmail.com'\n    sender_pass = 'your_password.'\n    receiver_address = to\n    #Setup the MIME\n    message = MIMEMultipart()\n    message['From'] = sender_address\n    message['To'] = receiver_address\n    message['Subject'] = subject   #The subject line",
+        "detail": "jarvis",
+        "documentation": {}
+    },
+    {
+        "label": "sendSMS",
+        "kind": 2,
+        "importPath": "jarvis",
+        "description": "jarvis",
+        "peekOfCode": "def sendSMS(to,content):\n    url = \"https://www.fast2sms.com/dev/bulk\"\n    content = '''From Abhinav :  \n ''' + content.capitalize()\n    payload = \"sender_id=FSTSMS&message=\" + content + \"&language=english&route=p&numbers=\" + to\n    headers = {\n    'authorization': \"GuTUEkoSX5shYKOlBHcvZDeAaJNrqbxigQ90tVwRyzdp14L28MCJeTnGLHAWZw1qv9zRE07XBFkYSjlc\",\n    'Content-Type': \"application/x-www-form-urlencoded\",\n    'Cache-Control': \"no-cache\",\n    }",
+        "detail": "jarvis",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "jarvis",
+        "description": "jarvis",
+        "peekOfCode": "engine = pyttsx3.init('sapi5')\nvoices= engine.getProperty('voices') #getting details of current voice\nengine.setProperty('voices', voices[0].id) #changing index, changes voices. 1 for female\nchrome_path = \"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s\"      #State your chrome path\ndef speak(audio):\n    engine.say(audio) \n    engine.runAndWait() #Without this command, speech will not be audible to us.\n''' Wishes on startup according to hour '''\ndef wishMe():\n    hour = datetime.datetime.now().hour",
+        "detail": "jarvis",
+        "documentation": {}
+    },
+    {
+        "label": "chrome_path",
+        "kind": 5,
+        "importPath": "jarvis",
+        "description": "jarvis",
+        "peekOfCode": "chrome_path = \"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s\"      #State your chrome path\ndef speak(audio):\n    engine.say(audio) \n    engine.runAndWait() #Without this command, speech will not be audible to us.\n''' Wishes on startup according to hour '''\ndef wishMe():\n    hour = datetime.datetime.now().hour\n    if hour >= 5 and hour < 12 :\n        speak(\"Good Morning \")\n    elif hour >= 12 and hour <= 18:",
+        "detail": "jarvis",
+        "documentation": {}
+    },
+    {
+        "label": "jokesDict",
+        "kind": 5,
+        "importPath": "jokes",
+        "description": "jokes",
+        "peekOfCode": "jokesDict = {\n    1: '''A bear walks into a bar and says, \"Give me a whiskey and … cola.\" \"Why the big pause?\" asks the bartender. The bear shrugged. \"I'm not sure. I was born with them.\"''',\n    2: '''Did you hear about the claustrophobic astronaut? He just needed a little space.''',\n    3: '''Why don’t scientists trust atoms? Because they make up everything.''',\n    4: '''A man tells his doctor, \"Doc, help me. I'm addicted to Twitter!\" The doctor replies, “Sorry, I don’t follow you …”'''\n}",
+        "detail": "jokes",
+        "documentation": {}
+    },
+    {
+        "label": "randomMusicList",
+        "kind": 5,
+        "importPath": "randomMusicList",
+        "description": "randomMusicList",
+        "peekOfCode": "randomMusicList = [\"Playing...\",  \"Let me take out my guitar\",  \"Right away sir\",  \"Sure..\"]",
+        "detail": "randomMusicList",
+        "documentation": {}
+    },
+    {
+        "label": "smsDict",
+        "kind": 5,
+        "importPath": "smsDict",
+        "description": "smsDict",
+        "peekOfCode": "smsDict = {\n    \"name\" : \"phone_number\"\n}",
+        "detail": "smsDict",
+        "documentation": {}
+    }
+]
